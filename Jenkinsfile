@@ -8,7 +8,8 @@ pipeline {
       stage ( 'stage2' ) {
           step {
               echo 'second stage'
-          }
-       }
-   }      
-}       
+         
+        }
+      }
+    }      
+} ,      
