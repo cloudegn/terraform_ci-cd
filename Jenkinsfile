@@ -1,15 +1,25 @@
 pipeline {
-    agent { label 'jenkinsnode' }
-    stages { 
-       stage ('stage1' ) {
-        step {
-            echo 'frist stage' 
+    agent { label 'Worker_1' }
+    
+    stages {
+        stage('Build') {
+            steps {
+                // Add your build commands here
+                sh 'echo "Building the project..."'
+            }
         }
-      stage ( 'stage2' ) {
-          step {
-              echo 'second stage'
-         
+        
+        stage('Test') {
+            steps {
+                // Add your test commands here
+                sh 'echo "Running tests..."'
+            }
         }
-      }
-    }      
-} ,      
+        
+        stage('Deploy') {
+            steps {
+                // Add your deployment commands here
+                sh 'echo "Deploying the project..."'
+            }
+        }
+    }
