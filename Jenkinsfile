@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'Worker_1' }
+    agent any
     
     stages {
         stage('Build') {
@@ -23,3 +23,15 @@ pipeline {
             }
         }
     }
+    
+    post {
+        success {
+            // This block will be executed if the pipeline is successful
+            echo 'Pipeline executed successfully!'
+        }
+        failure {
+            // This block will be executed if the pipeline fails
+            echo 'Pipeline execution failed!'
+        }
+    }
+}
