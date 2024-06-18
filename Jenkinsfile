@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Add your build commands here
-                sh 'echo "Buildin the project..."'
+                sh 'echo "Build the project..."'
             }
         }
         
